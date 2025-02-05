@@ -1,4 +1,5 @@
 from tkinter import Tk, BOTH, Canvas
+import time
 
 class Window:
     def __init__(self, width, height):
@@ -19,6 +20,7 @@ class Window:
         self.running = True
         while self.running:
             self.redraw()
+            time.sleep(0.01)
 
     def close(self):
         self.running = False
