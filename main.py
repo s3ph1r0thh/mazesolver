@@ -3,11 +3,9 @@ import time
 
 class Window:
     def __init__(self, width, height):
-        self.width = width
-        self.height = height
         self.running = False
         self.__root = Tk()
-        self.__root.title("mazesolver")
+        self.__root.title("Maze Solver")
         self.__canvas = Canvas(bg="white", height=height, width=width)
         self.__canvas.pack()
         self.__root.protocol("WM_DELETE_WINDOW", self.close)
@@ -21,6 +19,7 @@ class Window:
         while self.running:
             self.redraw()
             time.sleep(0.01)
+        print("window closed...")
 
     def close(self):
         self.running = False
